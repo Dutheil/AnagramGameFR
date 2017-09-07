@@ -74,8 +74,6 @@ namespace AnagramGameFR
 
 			this.LblThemes.Visible = false;
 			this.BtnStart.Visible = false;
-
-			this.listThemes.Clear();
 		}
 
 		//------------------------------------------------
