@@ -69,7 +69,7 @@ namespace AnagramGameFR
 
 				this.Timer.Stop();
 
-				this.score += this.time < 5 ? this.time / DIVIDE_SCORE : 1;
+				this.score += this.time > 5 ? this.time / DIVIDE_SCORE : 1;
 				this.LblScoreValue.Text = this.score.ToString();
 
 				this.LblWordsValue.Text = (++this.nWordsFound).ToString() + "/" + (++this.nWords).ToString();
