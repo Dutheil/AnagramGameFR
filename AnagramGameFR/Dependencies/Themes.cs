@@ -14,6 +14,7 @@ namespace AnagramGameFR.Dependencies
 		COUNTRY,
 		ELEMENT, // Chimical
 		VERB,
-		FIRSTNAME
+		FIRSTNAME,
+		LOLCHAMP
 	}
 }

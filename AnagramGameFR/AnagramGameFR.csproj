@@ -69,6 +69,7 @@
     <Compile Include="ThemesWords\Family.cs" />
     <Compile Include="ThemesWords\FirstName.cs" />
     <Compile Include="ThemesWords\Job.cs" />
+    <Compile Include="ThemesWords\LolChamp.cs" />
     <Compile Include="ThemesWords\Verb.cs" />
     <Compile Include="UC_Game.cs">
       <SubType>UserControl</SubType>
