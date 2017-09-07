@@ -11,6 +11,7 @@ namespace AnagramGameFR.Dependencies
 	public class ListWords
 	{
 		private List<Words> _Words = new List<Words>();
+		private List<Themes> _Themes = new List<Themes>();
 
 		public ListWords()
 		{
@@ -18,10 +19,13 @@ namespace AnagramGameFR.Dependencies
 
 			foreach(Type type in typelist)
 			{
+				Themes theme = (Themes)type.GetField("theme").GetValue(typeof(Themes));
+				this._Themes.Add(theme);
+
 				string[] words = (string[])type.GetField("words").GetValue(null);
 
 				foreach(string w in words)
-					this._Words.Add(new Words((Themes)type.GetField("theme").GetValue(typeof(Themes)), w));
+					this._Words.Add(new Words(theme, w));
 			}
 		}
 
@@ -39,21 +43,19 @@ namespace AnagramGameFR.Dependencies
 
 		//---------------------------------------------------------------
 
+		public Themes GetTheme(int index)
+		{
+			return index >= this._Themes.Count || index < 0 ? (Themes)(-1) : this._Themes[index];
+		}
+
 		public List<Themes> GetThemes()
 		{
-			List<Themes> themes = new List<Themes>();
-
-			foreach(Words w in this._Words)
-				themes.Add(w._theme);
-
-			return themes;
+			return this._Themes;
 		}
 
 		public Themes GetRandomTheme()
 		{
-			List<Themes> themes = this.GetThemes();
-
-			return themes[(new Random()).Next(themes.Count)];
+			return this._Themes[(new Random()).Next(this._Themes.Count)];
 		}
 
 		//---------------------------------------------------------------

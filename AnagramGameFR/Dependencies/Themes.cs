@@ -11,6 +11,9 @@ namespace AnagramGameFR.Dependencies
 		FAMILY,
 		JOB,
 		ANIMAL,
-		COUNTRY
+		COUNTRY,
+		ELEMENT, // Chimical
+		VERB,
+		FIRSTNAME
 	}
 }
